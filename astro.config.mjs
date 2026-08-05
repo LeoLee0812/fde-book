@@ -4,7 +4,8 @@ import starlight from '@astrojs/starlight';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://fdebook.saveme505.help',
+	// 主站已迁到 Cloudflare Workers，canonical / sitemap 都指向新域名
+	site: 'https://fdebook.openfde.online',
 	integrations: [
 		starlight({
 			title: '前线部署工程师（FDE）',
@@ -22,6 +23,17 @@ export default defineConfig({
 				},
 			],
 			customCss: ['./src/styles/custom.css'],
+			// Cloudflare Web Analytics：手动注入 beacon，统计数据进 CF 后台
+			head: [
+				{
+					tag: 'script',
+					attrs: {
+						defer: true,
+						src: 'https://static.cloudflareinsights.com/beacon.min.js',
+						'data-cf-beacon': '{"token": "f5b1fbf53cad4881b713ff74cffaf80f"}',
+					},
+				},
+			],
 			// 正文以二级标题分节，目录只抓 h2/h3
 			tableOfContents: { minHeadingLevel: 2, maxHeadingLevel: 3 },
 			sidebar: [
