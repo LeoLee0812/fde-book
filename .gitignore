@@ -10,3 +10,6 @@ node_modules/
 .DS_Store
 .vercel
 .env*
+
+# Cloudflare Workers 本地状态
+.wrangler/

@@ -1,0 +1,14 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	// 纯静态站：不需要 Worker 脚本，直接由 Workers Static Assets 托管 dist/
+	"name": "fde-book",
+	"compatibility_date": "2026-08-01",
+	"assets": {
+		"directory": "./dist",
+		// 找不到的路径回落到 Starlight 生成的 404 页面
+		"not_found_handling": "404-page"
+	},
+	"observability": {
+		"enabled": true
+	}
+}
