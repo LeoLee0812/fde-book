@@ -1,0 +1,43 @@
+/* 中文长文阅读优化：字体、行距、段间距、引用块 */
+:root {
+	--sl-font:
+		-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB',
+		'Microsoft YaHei', 'Source Han Sans SC', 'Noto Sans CJK SC', sans-serif;
+	--sl-text-5xl: 2.5rem;
+}
+
+/* 正文放宽行距，中文密排更好读 */
+.sl-markdown-content {
+	line-height: 1.9;
+	font-size: 1.0625rem;
+	text-wrap: pretty;
+}
+
+.sl-markdown-content p {
+	margin-block: 1.1em;
+}
+
+/* 章节标题上方留白拉开，扫读时层级更清楚 */
+.sl-markdown-content :is(h2, h3):not(:where(.not-content *)) {
+	margin-top: 2.2em;
+}
+
+/* 书里大量引用原话，做成左侧色条的样式 */
+.sl-markdown-content blockquote:not(:where(.not-content *)) {
+	border-inline-start: 3px solid var(--sl-color-accent);
+	padding-inline-start: 1.2rem;
+	color: var(--sl-color-gray-2);
+	font-style: normal;
+}
+
+/* 表格在窄屏可横向滚动，附录里的宽表不会撑破布局 */
+.sl-markdown-content table {
+	display: block;
+	overflow-x: auto;
+	max-width: 100%;
+}
+
+/* 首页 hero 标题不换行太碎 */
+.hero h1 {
+	text-wrap: balance;
+}

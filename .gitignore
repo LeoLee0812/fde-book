@@ -1,0 +1,10 @@
+# 构建产物与依赖
+dist/
+node_modules/
+.astro/
+.vercel/
+
+# 环境与系统文件
+.env
+.env.production
+.DS_Store
