@@ -24,13 +24,14 @@ export default defineConfig({
 			],
 			customCss: ['./src/styles/custom.css'],
 			// Cloudflare Web Analytics：手动注入 beacon，统计数据进 CF 后台
+			// token 用 leolee0812.site zone 的 site_token（不是后台展示的 site tag）
 			head: [
 				{
 					tag: 'script',
 					attrs: {
 						defer: true,
 						src: 'https://static.cloudflareinsights.com/beacon.min.js',
-						'data-cf-beacon': '{"token": "f5b1fbf53cad4881b713ff74cffaf80f"}',
+						'data-cf-beacon': '{"token": "48701f7045fb436d9e1a677adce6b2e6"}',
 					},
 				},
 			],
