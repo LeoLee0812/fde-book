@@ -2,12 +2,12 @@
 
 [![Astro](https://img.shields.io/badge/Astro-7-BC52EE?style=flat-square&logo=astro&logoColor=white)](https://astro.build)
 [![Starlight](https://img.shields.io/badge/Starlight-0.41-4F46E5?style=flat-square&logo=astro&logoColor=white)](https://starlight.astro.build)
-[![Vercel](https://img.shields.io/badge/deploy-Vercel-000000?style=flat-square&logo=vercel&logoColor=white)](https://fdebook.saveme505.help)
+[![Cloudflare Workers](https://img.shields.io/badge/deploy-Cloudflare%20Workers-F38020?style=flat-square&logo=cloudflare&logoColor=white)](https://fdebook.leolee0812.site)
 [![版权](https://img.shields.io/badge/正文版权-归原作者范冰-orange?style=flat-square)](https://github.com/xdash/FDE-the-Guidance-Book-of-Forward-Deployed-Engineer)
 
 范冰（XDash）著《前线部署工程师：人工智能时代的客户价值交付秘籍》的在线阅读站，正文一字未改，只做了排版与导航。
 
-- 在线阅读：<https://fdebook.saveme505.help>
+- 在线阅读：<https://fdebook.leolee0812.site>（备用地址 <https://fdebook.openfde.online>）
 - 原始仓库：<https://github.com/xdash/FDE-the-Guidance-Book-of-Forward-Deployed-Engineer>
 
 ## 这个仓库做了什么

@@ -4,8 +4,8 @@ import starlight from '@astrojs/starlight';
 
 // https://astro.build/config
 export default defineConfig({
-	// 主站已迁到 Cloudflare Workers，canonical / sitemap 都指向新域名
-	site: 'https://fdebook.openfde.online',
+	// 主站在 Cloudflare Workers，canonical / sitemap 指向主域名 leolee0812.site
+	site: 'https://fdebook.leolee0812.site',
 	integrations: [
 		starlight({
 			title: '前线部署工程师（FDE）',
