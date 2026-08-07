@@ -1,0 +1,43 @@
+# push 到 main 就自动构建并部署到 Cloudflare Workers（静态站走 Workers Static Assets）。
+#
+# 需要两个仓库 Secret：
+#   CLOUDFLARE_API_TOKEN   权限 Workers Scripts:Edit
+#   CLOUDFLARE_ACCOUNT_ID  账号 ID
+
+name: Deploy to Cloudflare Workers
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - "**/*.md"
+      - ".github/**"
+  workflow_dispatch: {}
+
+concurrency:
+  group: deploy-cloudflare
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - name: 安装依赖
+        run: pnpm install --frozen-lockfile
+      - name: 构建
+        run: pnpm build
+      - name: 部署
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: deploy
